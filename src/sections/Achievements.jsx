@@ -45,7 +45,7 @@ const certificates = [
   },
 ];
 
-const Achievements = () => {
+const Achievements = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   return (
     <div className="max-w-5xl mx-auto py-12 px-4 text-white">
 

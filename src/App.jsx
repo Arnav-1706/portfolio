@@ -21,8 +21,8 @@ function App() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(false);
 
   // Using public domain sounds for reliable playback
-  const [playHover] = useSound('https://actions.google.com/sounds/v1/ui/button_rollover.ogg', { soundEnabled: isSoundEnabled });
-  const [playClick] = useSound('https://actions.google.com/sounds/v1/pop_up/button_click.ogg', { soundEnabled: isSoundEnabled });
+  const [playHover] = useSound("/hover.mp3");
+  const [playClick] = useSound("/click.mp3");
 
   const ActiveComponent = componentsMap[activeSection];
 
@@ -41,6 +41,7 @@ function App() {
           <TopNavbar
             activeSection={activeSection}
             setActiveSection={handleSectionChange}
+            isSoundEnabled={isSoundEnabled}
             playHover={playHover}
             playClick={playClick}
           />
@@ -48,6 +49,7 @@ function App() {
           <VendingMachine
             activeSection={activeSection}
             setActiveSection={handleSectionChange}
+            isSoundEnabled={isSoundEnabled}
             playHover={playHover}
             playClick={playClick}
           />
@@ -62,7 +64,12 @@ function App() {
                 transition={{ duration: 0.5, ease: "backOut" }}
                 className="w-full h-full p-6 md:p-12 lg:p-20 overflow-y-auto hide-scrollbar"
               >
-                <ActiveComponent />
+                <ActiveComponent
+                  setSection={handleSectionChange}
+                  isSoundEnabled={isSoundEnabled}
+                  playClick={playClick}
+                  playHover={playHover}
+                />
               </motion.div>
             </AnimatePresence>
           </main>

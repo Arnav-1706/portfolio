@@ -69,7 +69,7 @@ const projects = [
   }
 ];
 
-const Projects = () => {
+const Projects = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   return (
     <div className="max-w-5xl mx-auto py-12">
       <div className="mb-10 text-center">

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Code, Cpu, GraduationCap, ChevronRight } from 'lucide-react';
 
-const About = () => {
+const About = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   const [text, setText] = useState('');
   const fullText = "Accessing profile data... \nLoading user: Arnav Kant... \nStatus: ACTIVE \nDesignation: Full-Stack Developer & ML Enthusiast";
   

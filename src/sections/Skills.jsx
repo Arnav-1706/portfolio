@@ -57,7 +57,7 @@ const SkillCategory = ({ title, skills, colorClass, delay }) => (
   </motion.div>
 );
 
-const Skills = () => {
+const Skills = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   return (
     <div className="max-w-4xl mx-auto py-12">
       <div className="mb-10 border-b-2 border-neon-blue pb-4">

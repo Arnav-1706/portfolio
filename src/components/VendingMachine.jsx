@@ -1,6 +1,6 @@
 const links = ['Home', 'About', 'Skills', 'Projects', 'Stats', 'Achievements', 'Contact'];
 
-const VendingMachine = ({ activeSection, setActiveSection, playHover, playClick }) => {
+const VendingMachine = ({ activeSection, setActiveSection, isSoundEnabled, playHover, playClick }) => {
   return (
     <aside className="hidden lg:flex flex-col w-64 h-full bg-dark-800 border-r-4 border-neon-purple relative z-30 shadow-[4px_0_20px_#8a2be2]">
       <div className="p-6 border-b border-neon-blue/20">
@@ -17,9 +17,9 @@ const VendingMachine = ({ activeSection, setActiveSection, playHover, playClick 
         {links.map((link) => (
           <button
             key={link}
-            onMouseEnter={() => playHover && playHover()}
+            onMouseEnter={() => isSoundEnabled && playHover && playHover()}
             onClick={() => {
-              playClick && playClick();
+              if (isSoundEnabled && playClick) playClick();
               setActiveSection(link);
             }}
             className={`group flex items-center p-3 border-2 transition-all duration-300 ${

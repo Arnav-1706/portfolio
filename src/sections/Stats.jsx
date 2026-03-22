@@ -6,7 +6,7 @@ const STATS = [
   { label: "REPOSITORIES", value: 10, color: "text-white" },
 ];
 
-const Stats = () => {
+const Stats = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 text-white">
 

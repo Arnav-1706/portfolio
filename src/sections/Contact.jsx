@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const Contact = ({ setSection, isSoundEnabled, playClick, playHover }) => {
   return (
     <div className="max-w-4xl mx-auto py-12 flex flex-col h-full min-h-[60vh]">
 
